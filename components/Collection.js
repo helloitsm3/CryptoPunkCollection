@@ -40,14 +40,24 @@ const Collection = () => {
     });
 
     const { prev, next } = page;
+
+    /**
+     * Using memo to memoize the slicing of crypto punks array
+     */
     const punkSlice = useMemo(() => CryptoPunks.slice(prev, next));
 
+    /**
+     * Function to handle previous pagination
+     */
     const handlePrev = () => {
         if (prev > 0) {
             setPage((prevState) => ({ prev: prevState.prev - counter, next: prevState.next - counter }));
         }
     };
 
+    /**
+     * Function to handle next pagination
+     */
     const handleNext = () => {
         if (next < 9999) {
             setPage((prevState) => ({ prev: prevState.prev + counter, next: prevState.next + counter }));
