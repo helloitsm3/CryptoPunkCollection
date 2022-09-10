@@ -1,3 +1,4 @@
+import Socials from "./Socials";
 import useRandomPunks from "../hooks/useRandomPunks";
 
 const Hero = () => {
@@ -18,6 +19,8 @@ const Hero = () => {
                     collectibles.
                 </span>
             </div>
+
+            <Socials />
         </div>
     );
 };

@@ -1,6 +1,5 @@
 import Head from "next/head";
 
-import { getDefaultProvider } from "ethers";
 import { goerli, mainnet } from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
