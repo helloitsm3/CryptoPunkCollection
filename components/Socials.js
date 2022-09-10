@@ -1,3 +1,7 @@
+/**
+ * Component to render social medias
+ *
+ */
 const Socials = () => {
     const socials = [
         {

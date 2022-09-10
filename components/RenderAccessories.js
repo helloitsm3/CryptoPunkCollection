@@ -1,3 +1,11 @@
+/**
+ * Renders component when user is viewing on a web browser
+ * @example
+ *
+ * accessories = ["Black Lipstick", "Green Eye Shadow", "Blonde Bob"]
+ *
+ * <RenderAccessories accessories={accessories} />
+ */
 const RenderAccessories = ({ accessories }) => {
     return (
         <div>

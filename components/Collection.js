@@ -2,6 +2,9 @@ import Link from "next/link";
 import CryptoPunks from "../public/cryptopunks.json";
 import RenderAccessories from "./RenderAccessories";
 
+/**
+ * A component to render individual Crypto Punks details
+ */
 const RenderPunks = (punk) => {
     const { type, image, accessories } = punk.punk;
     const title = image.replace("https://www.larvalabs.com/cryptopunks/cryptopunk", "").replace(".png", "").replace("cryptopunk", "");
@@ -24,6 +27,9 @@ const RenderPunks = (punk) => {
     );
 };
 
+/**
+ * A component to render a collection of Crypto Punks
+ */
 const Collection = ({ data }) => {
     const test = [
         { type: "Female", image: "cryptopunk100.png", accessories: ["Tassle Hat"] },

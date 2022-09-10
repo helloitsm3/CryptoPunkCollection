@@ -1,6 +1,11 @@
 import Socials from "./Socials";
 import useRandomPunks from "../hooks/useRandomPunks";
 
+/**
+ * A component to render a hero section of the page.
+ *
+ * @see {@link https://www.awebco.com/blog/hero-section/}
+ */
 const Hero = () => {
     const punks = useRandomPunks();
 

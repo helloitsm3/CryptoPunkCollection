@@ -6,6 +6,9 @@ import CryptoPunks from "../../public/cryptopunks.json";
 import useRandomPunks from "../../hooks/useRandomPunks";
 import RenderAccessories from "../../components/RenderAccessories";
 
+/**
+ * A page to render details of individual Crypto Punks
+ */
 const Punks = ({ data }) => {
     const router = useRouter();
     const { id } = router.query;
@@ -13,28 +16,30 @@ const Punks = ({ data }) => {
     const c_punk = CryptoPunks.find((punk) => punk.image.includes(`cryptopunk${id}.png`));
 
     return (
-        <main className="text-white bg-gradient-texture min-h-screen bg-no-repeat bg-black px-10">
+        <main className="text-white bg-gradient-texture min-h-screen bg-no-repeat bg-black">
             <Header />
 
-            <div className="container mx-auto my-10 flex md:flex-row flex-col">
-                <img src={punk} className="punk-image" />
+            <div className="px-10">
+                <div className="container mx-auto my-10 flex md:flex-row flex-col">
+                    <img src={punk} className="punk-image" />
 
-                <div className="flex justify-between flex-col md:px-10">
-                    <h1 className="font-bold text-4xl md:py-0 py-5">#{id}</h1>
-                    <p className="text-lg">
-                        10,000 unique collectible characters with proof of ownership stored on the Ethereum blockchain. The project that
-                        inspired the modern CryptoArt movement. Selected press and appearances include Mashable, CNBC, The Financial Times,
-                        Bloomberg, MarketWatch, The Paris Review, Salon, The Outline, BreakerMag, Christie's of London, Art|Basel, The PBS
-                        NewsHour, The New York Times in 2018 and again in 2021. The Cryptopunks are one of the earliest examples of a
-                        "Non-Fungible Token" on Ethereum, and were inspiration for the ERC-721 standard that powers most digital art and
-                        collectibles.
-                    </p>
+                    <div className="flex justify-between flex-col md:px-10">
+                        <h1 className="font-bold text-4xl md:py-0 py-5">#{id}</h1>
+                        <p className="text-lg">
+                            10,000 unique collectible characters with proof of ownership stored on the Ethereum blockchain. The project that
+                            inspired the modern CryptoArt movement. Selected press and appearances include Mashable, CNBC, The Financial
+                            Times, Bloomberg, MarketWatch, The Paris Review, Salon, The Outline, BreakerMag, Christie's of London,
+                            Art|Basel, The PBS NewsHour, The New York Times in 2018 and again in 2021. The Cryptopunks are one of the
+                            earliest examples of a "Non-Fungible Token" on Ethereum, and were inspiration for the ERC-721 standard that
+                            powers most digital art and collectibles.
+                        </p>
 
-                    <RenderAccessories accessories={c_punk.accessories} />
+                        <RenderAccessories accessories={c_punk.accessories} />
+                    </div>
                 </div>
-            </div>
 
-            <RenderSales data={data} />
+                <RenderSales data={data} />
+            </div>
         </main>
     );
 };

@@ -3,6 +3,21 @@ import Link from "next/link";
 
 import { formatter } from "./utils";
 
+/**
+ * Renders component when user is viewing on a web browser
+ * @example
+ *
+ * sales = [{
+        "transactionHash": "0x28a123f26b7a1a7944a19aea90d36fce4045fbf3f8ebbefa11927258915ac6ab",
+        "blockTimestamp": "2022-08-17T17:23:44.000Z",
+        "usdPrice": 188515,
+        "buyer": "0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685",
+        "seller": "0xbbaec56b725a0b9501a655d7d1b48555af637b70",
+        "prevUSDPrice": 113346.54,
+    }]
+ *
+ * <RenderDesktop sales={sales} />
+ */
 const RenderDesktop = ({ sales }) => {
     return (
         <div className="container mx-auto lg:flex flex-col justify-center px-10 hidden">
@@ -42,6 +57,21 @@ const RenderDesktop = ({ sales }) => {
     );
 };
 
+/**
+ * Renders component when user is viewing on a mobile
+ * @example
+ *
+ * sales = [{
+        "transactionHash": "0x28a123f26b7a1a7944a19aea90d36fce4045fbf3f8ebbefa11927258915ac6ab",
+        "blockTimestamp": "2022-08-17T17:23:44.000Z",
+        "usdPrice": 188515,
+        "buyer": "0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685",
+        "seller": "0xbbaec56b725a0b9501a655d7d1b48555af637b70",
+        "prevUSDPrice": 113346.54,
+    }]
+ *
+ * <RenderMobile sales={sales} />
+ */
 const RenderMobile = ({ sales }) => {
     return (
         <div className="container mx-auto flex flex-col justify-center lg:px-10 lg:hidden">
@@ -73,6 +103,21 @@ const RenderMobile = ({ sales }) => {
     );
 };
 
+/**
+ * Renders the sale of a crypto punk NFT
+ * @example
+ *
+ * data = {
+        "transactionHash": "0x28a123f26b7a1a7944a19aea90d36fce4045fbf3f8ebbefa11927258915ac6ab",
+        "blockTimestamp": "2022-08-17T17:23:44.000Z",
+        "usdPrice": 188515,
+        "buyer": "0x1919db36ca2fa2e15f9000fd9cdc2edcf863e685",
+        "seller": "0xbbaec56b725a0b9501a655d7d1b48555af637b70",
+        "prevUSDPrice": 113346.54,
+    }
+ *
+ * <RenderSales data={data} />
+ */
 const RenderSales = ({ data }) => {
     const { sales, total } = data;
 

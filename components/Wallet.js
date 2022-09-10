@@ -8,6 +8,7 @@ const Wallet = () => {
         connector: new InjectedConnector(),
     });
 
+    // Checks if wallet is connected and render a disconnect button
     if (isConnected) {
         return (
             <div className="flex flex-col items-center">
@@ -20,6 +21,7 @@ const Wallet = () => {
         );
     }
 
+    // Returns a connect wallet button if wallet is not connected
     return (
         <button className="bg-blue-600 px-8 py-3 rounded-lg" onClick={() => connect()}>
             Connect Wallet
