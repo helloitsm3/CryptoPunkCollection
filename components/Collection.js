@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CryptoPunks from "../public/cryptopunks.json";
+import RenderAccessories from "./RenderAccessories";
 
 const RenderPunks = (punk) => {
     const { type, image, accessories } = punk.punk;
@@ -15,15 +16,8 @@ const RenderPunks = (punk) => {
                     <span>{type}</span>
                 </div>
 
-                <div>
-                    <span className="font-bold text-lg">Accessories:</span>
-                    <div className="flex flex-wrap">
-                        {accessories.map((accessory, index) => (
-                            <p key={index} className="mr-2 bg-bright-purple rounded-sm px-2 my-1">
-                                {accessory}
-                            </p>
-                        ))}
-                    </div>
+                <div className="flex flex-wrap">
+                    <RenderAccessories accessories={accessories} />
                 </div>
             </a>
         </Link>
@@ -115,7 +109,7 @@ const Collection = ({ data }) => {
             <h2 className="text-4xl font-bold">Collection</h2>
 
             <div className="grid xl:grid-cols-5 md:grid-cols-3 gap-8 py-10 px-10">
-                {test.slice(0, 28).map((punk, index) => (
+                {test.slice(0, 15).map((punk, index) => (
                     <RenderPunks punk={punk} key={index} />
                 ))}
             </div>

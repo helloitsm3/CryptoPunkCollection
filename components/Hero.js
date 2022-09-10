@@ -4,7 +4,6 @@ import useRandomPunks from "../hooks/useRandomPunks";
 const Hero = () => {
     const punks = useRandomPunks();
 
-    console.log(punks);
     return (
         <div className="flex flex-col justify-center items-center my-24">
             <img src={punks} className="punk-placeholder" />

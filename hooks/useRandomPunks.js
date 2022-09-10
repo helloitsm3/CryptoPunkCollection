@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-export default function useRandomPunks() {
+export default function useRandomPunks(id = "") {
     const [punks, setPunks] = useState("");
 
     function random(min, max) {
@@ -10,7 +10,8 @@ export default function useRandomPunks() {
     }
 
     useEffect(() => {
-        setPunks(`https://cryptopunks.app/cryptopunks/cryptopunk${random(0, 9999)}.png`);
+        let punkId = id || random(0, 9999);
+        setPunks(`https://cryptopunks.app/cryptopunks/cryptopunk${punkId}.png`);
     }, []);
 
     return punks;
