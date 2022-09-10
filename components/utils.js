@@ -11,7 +11,7 @@
  * formatter.format("12345")
  * => $12,345.00
  *
- *  formatter.format("123456")
+ * formatter.format("123456")
  * => $123,456.00
  */
 export const formatter = new Intl.NumberFormat("en-US", {
