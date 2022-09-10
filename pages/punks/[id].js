@@ -28,7 +28,7 @@ const Punks = ({ data }) => {
                         <p className="text-lg">
                             10,000 unique collectible characters with proof of ownership stored on the Ethereum blockchain. The project that
                             inspired the modern CryptoArt movement. Selected press and appearances include Mashable, CNBC, The Financial
-                            Times, Bloomberg, MarketWatch, The Paris Review, Salon, The Outline, BreakerMag, Christie's of London,
+                            Times, Bloomberg, MarketWatch, The Paris Review, Salon, The Outline, BreakerMag, Christie&apos;s of London,
                             Art|Basel, The PBS NewsHour, The New York Times in 2018 and again in 2021. The Cryptopunks are one of the
                             earliest examples of a "Non-Fungible Token" on Ethereum, and were inspiration for the ERC-721 standard that
                             powers most digital art and collectibles.
