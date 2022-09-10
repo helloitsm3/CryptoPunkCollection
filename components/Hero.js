@@ -19,8 +19,8 @@ const Hero = () => {
                     inspired the modern CryptoArt movement. Selected press and appearances include Mashable, CNBC, The Financial Times,
                     Bloomberg, MarketWatch, The Paris Review, Salon, The Outline, BreakerMag, Christie&apos;s of London, Art|Basel, The PBS
                     NewsHour, The New York Times in 2018 and again in 2021. The Cryptopunks are one of the earliest examples of a
-                    "Non-Fungible Token" on Ethereum, and were inspiration for the ERC-721 standard that powers most digital art and
-                    collectibles.
+                    &ldquo;Non-Fungible Token&ldquo; on Ethereum, and were inspiration for the ERC-721 standard that powers most digital art
+                    and collectibles.
                 </span>
             </div>
 
