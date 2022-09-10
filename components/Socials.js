@@ -25,7 +25,7 @@ const Socials = () => {
         <div className="flex flex-row justify-center space-x-5">
             {socials.map((social, index) => {
                 return (
-                    <a href={social.url} key={index} target="_blank">
+                    <a href={social.url} key={index} target="_blank" rel="noopener noreferrer">
                         <span className={social.styles}>{social.title}</span>
                     </a>
                 );

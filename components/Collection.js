@@ -13,7 +13,7 @@ const RenderPunks = (punk) => {
 
     return (
         <Link href={`/punks/${title}`} passHref>
-            <a className="flex flex-col" target="_blank">
+            <a className="flex flex-col" target="_blank" rel="noopener noreferrer">
                 <img src={image} />
 
                 <div className="flex flex-row items-center justify-between py-3">

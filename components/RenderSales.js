@@ -43,7 +43,7 @@ const RenderDesktop = ({ sales }) => {
                                 <td className="h-12">{moment(blockTimestamp).format("LLL")}</td>
                                 <td className="h-12">
                                     <Link href={`https://etherscan.io/tx/${transactionHash}`} passHref>
-                                        <a target="_blank" className="bg-white rounded-md text-black px-5 py-2">
+                                        <a target="_blank" rel="noopener noreferrer" className="bg-white rounded-md text-black px-5 py-2">
                                             View Transaction
                                         </a>
                                     </Link>
@@ -90,7 +90,7 @@ const RenderMobile = ({ sales }) => {
 
                             <div className="my-3 mt-5 bg-blue-500 rounded-md w-full text-center py-3">
                                 <Link href={`https://etherscan.io/tx/${transactionHash}`} passHref>
-                                    <a target="_blank" className=" text-black">
+                                    <a target="_blank" rel="noopener noreferrer" className=" text-black">
                                         View Transaction
                                     </a>
                                 </Link>
