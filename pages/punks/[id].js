@@ -13,14 +13,14 @@ const Punks = ({ data }) => {
     const c_punk = CryptoPunks.find((punk) => punk.image.includes(`cryptopunk${id}.png`));
 
     return (
-        <main className="text-white bg-gradient-texture min-h-screen bg-no-repeat bg-black">
+        <main className="text-white bg-gradient-texture min-h-screen bg-no-repeat bg-black px-10">
             <Header />
 
-            <div className="container mx-auto my-10 flex flex-row">
-                <img src={punk} className="punk-image px-10" />
+            <div className="container mx-auto my-10 flex md:flex-row flex-col">
+                <img src={punk} className="punk-image" />
 
-                <div className="flex justify-between flex-col">
-                    <h1 className="font-bold text-4xl">#{id}</h1>
+                <div className="flex justify-between flex-col md:px-10">
+                    <h1 className="font-bold text-4xl md:py-0 py-5">#{id}</h1>
                     <p className="text-lg">
                         10,000 unique collectible characters with proof of ownership stored on the Ethereum blockchain. The project that
                         inspired the modern CryptoArt movement. Selected press and appearances include Mashable, CNBC, The Financial Times,
