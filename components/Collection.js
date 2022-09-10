@@ -1,3 +1,5 @@
+import { useState, useMemo } from "react";
+
 import Link from "next/link";
 import CryptoPunks from "../public/cryptopunks.json";
 import RenderAccessories from "./RenderAccessories";
@@ -30,94 +32,45 @@ const RenderPunks = (punk) => {
 /**
  * A component to render a collection of Crypto Punks
  */
-const Collection = ({ data }) => {
-    const test = [
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Tassle Hat"] },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Police Cap", "Nerd Glasses"] },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Vampire Hair", "Luxurious Beard"],
-        },
-        {
-            type: "Female",
-            image: "cryptopunk100.png",
-            accessories: ["Black Lipstick", "Green Eye Shadow", "Blonde Bob"],
-        },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Normal Beard Black", "Earring", "Crazy Hair", "Eye Patch"],
-        },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Mohawk Thin"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Straight Hair Blonde"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Tassle Hat"] },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Police Cap", "Nerd Glasses"] },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Vampire Hair", "Luxurious Beard"],
-        },
-        {
-            type: "Female",
-            image: "cryptopunk100.png",
-            accessories: ["Black Lipstick", "Green Eye Shadow", "Blonde Bob"],
-        },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Normal Beard Black", "Earring", "Crazy Hair", "Eye Patch"],
-        },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Mohawk Thin"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Straight Hair Blonde"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Tassle Hat"] },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Police Cap", "Nerd Glasses"] },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Vampire Hair", "Luxurious Beard"],
-        },
-        {
-            type: "Female",
-            image: "cryptopunk100.png",
-            accessories: ["Black Lipstick", "Green Eye Shadow", "Blonde Bob"],
-        },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Normal Beard Black", "Earring", "Crazy Hair", "Eye Patch"],
-        },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Mohawk Thin"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Straight Hair Blonde"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Tassle Hat"] },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Police Cap", "Nerd Glasses"] },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Vampire Hair", "Luxurious Beard"],
-        },
-        {
-            type: "Female",
-            image: "cryptopunk100.png",
-            accessories: ["Black Lipstick", "Green Eye Shadow", "Blonde Bob"],
-        },
-        {
-            type: "Male",
-            image: "cryptopunk100.png",
-            accessories: ["Normal Beard Black", "Earring", "Crazy Hair", "Eye Patch"],
-        },
-        { type: "Male", image: "cryptopunk100.png", accessories: ["Mohawk Thin"] },
-        { type: "Female", image: "cryptopunk100.png", accessories: ["Straight Hair Blonde"] },
-    ];
+const Collection = () => {
+    const counter = 5;
+    const [page, setPage] = useState({
+        prev: 0,
+        next: 5,
+    });
+
+    const { prev, next } = page;
+    const punkSlice = useMemo(() => CryptoPunks.slice(prev, next));
+
+    const handlePrev = () => {
+        if (prev > 0) {
+            setPage((prevState) => ({ prev: prevState.prev - counter, next: prevState.next - counter }));
+        }
+    };
+
+    const handleNext = () => {
+        if (next < 9999) {
+            setPage((prevState) => ({ prev: prevState.prev + counter, next: prevState.next + counter }));
+        }
+    };
 
     return (
         <div className="flex flex-col items-center">
             <h2 className="text-4xl font-bold">Collection</h2>
 
             <div className="grid xl:grid-cols-5 md:grid-cols-3 gap-8 py-10 px-10">
-                {test.slice(0, 15).map((punk, index) => (
+                {punkSlice.map((punk, index) => (
                     <RenderPunks punk={punk} key={index} />
                 ))}
+            </div>
+
+            <div className="flex space-x-5 py-10">
+                <button onClick={handlePrev} className="bg-blue-500 px-8 py-2 rounded-md">
+                    Prev
+                </button>
+                <button onClick={handleNext} className="bg-blue-500 px-8 py-2 rounded-md">
+                    Next
+                </button>
             </div>
         </div>
     );
