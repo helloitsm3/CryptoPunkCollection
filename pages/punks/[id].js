@@ -45,7 +45,7 @@ const Punks = ({ data }) => {
 };
 
 export default Punks;
-export async function getServerSideProps({ query }) {
+export async function getServerSideProps({ query, urqlClient }) {
     const { id } = query;
     const isRedirect = isNaN(id, 10) || parseInt(id, 10) > 9999;
 

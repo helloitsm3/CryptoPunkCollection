@@ -1,6 +1,7 @@
 import Head from "next/head";
 
 import { mainnet } from "wagmi/chains";
+import { withUrqlClient } from "next-urql";
 import { publicProvider } from "wagmi/providers/public";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 import { WagmiConfig, createClient, configureChains } from "wagmi";
@@ -42,4 +43,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default MyApp;
+export default withUrqlClient(() => ({ url: "https://graphql-pokemon.now.sh" }))(MyApp);
