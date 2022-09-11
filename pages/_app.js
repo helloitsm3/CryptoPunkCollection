@@ -43,4 +43,4 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default withUrqlClient(() => ({ url: "https://graphql-pokemon.now.sh" }))(MyApp);
+export default withUrqlClient(() => ({ url: "http://localhost:5001/api/with-cryptopunks" }), { ssr: true })(MyApp);
