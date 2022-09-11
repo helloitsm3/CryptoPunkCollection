@@ -43,4 +43,15 @@ function MyApp({ Component, pageProps }) {
     );
 }
 
-export default withUrqlClient(() => ({ url: "http://localhost:5001/api/with-cryptopunks" }), { ssr: true })(MyApp);
+export default withUrqlClient(
+    () => ({
+        url: process.env.NEXT_PUBLIC_API_URL,
+        fetchOptions: {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: process.env.NEXT_PUBLIC_API_KEY,
+            },
+        },
+    }),
+    { ssr: true }
+)(MyApp);

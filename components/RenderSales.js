@@ -119,9 +119,9 @@ const RenderMobile = ({ sales }) => {
  * <RenderSales data={data} />
  */
 const RenderSales = ({ data }) => {
-    const { sales, total } = data;
+    const { sales } = data.assetSales;
 
-    if (total === 0) return <p className="text-center py-16 font-bold text-2xl">There's currently no sales for this punk!</p>;
+    if (sales.length === 0) return <p className="text-center py-16 font-bold text-2xl">There's currently no sales for this punk!</p>;
 
     return (
         <div>
